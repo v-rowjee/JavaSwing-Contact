@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.format.DateTimeFormatter;
@@ -29,6 +30,8 @@ public class Screen extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
         this.pack();
+
+        centerFrame();
 
         people = new ArrayList<Person>();
 
@@ -98,6 +101,16 @@ public class Screen extends JFrame{
 
     }
 
+    private void centerFrame() {
+        Dimension windowSize = getSize();
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        Point centerPoint = ge.getCenterPoint();
+
+        int dx = centerPoint.x - windowSize.width / 2;
+        int dy = centerPoint.y - windowSize.height / 2;
+        setLocation(dx, dy);
+    }
+
     public void refreshPeopleList(){
         listPeopleModel.removeAllElements();
         for (Person p : people){
@@ -111,17 +124,4 @@ public class Screen extends JFrame{
         refreshPeopleList();
     }
 
-    public static void main(String[] args) {
-        Screen screen = new Screen();
-        screen.setVisible(true);
-
-        Person tom = new Person("Tom Holland","T2602200038810C","tomholland@marvel.com", "57104790", "26/02/2000");
-        Person alex = new Person("Alex Witchcraft","A10319903002871","alexwitchy@gmail.com", "59749950", "06/10/1990");
-        Person alice = new Person("Alice Wonderland","A1410199930420C","alicewonderland@gmail.com", "54720829", "14/10/1999");
-
-        screen.addPerson(tom);
-        screen.addPerson(alex);
-        screen.addPerson(alice);
-
-    }
 }

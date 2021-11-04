@@ -10,14 +10,16 @@ public class Person {
     private String email;
     private LocalDate dateOfBirth;
 
-    public Person(String name, String nid, String phoneNumber, String email, LocalDate dateOfBirth) {
+    public Person() {}
+
+    public Person(String name, String nid, String email, String phoneNumber, LocalDate dateOfBirth) {
         this.name = name;
         this.nid = nid;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.dateOfBirth = dateOfBirth;
     }
-    public Person(String name, String nid, String phoneNumber, String email, String dateOfBirth) {
+    public Person(String name, String nid, String email, String phoneNumber, String dateOfBirth) {
         this.name = name;
         this.nid = nid;
         this.phoneNumber = phoneNumber;
