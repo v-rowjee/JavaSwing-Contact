@@ -125,8 +125,17 @@ public class Login extends JFrame{
     }
 
     public static void main(String[] args) {
+        
+        try {
+            UIManager
+                    .setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        } catch (Exception exc) {
+            JOptionPane.showMessageDialog(null,
+                    "setLookAndFeel didn`t work: \n" + exc, "UI Failure",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+        
         Login login = new Login();
         login.setVisible(true);
-
     }
 }
