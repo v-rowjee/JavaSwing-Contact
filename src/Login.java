@@ -11,6 +11,9 @@ public class Login extends JFrame{
     private JTextField txtUsername;
     private JPasswordField txtPassword;
     private JButton btnLogin;
+    
+    // create constructor for current user object
+    Person currentUser = new Person();
 
     Login() {
         this.setTitle("Contact Project");
@@ -54,9 +57,6 @@ public class Login extends JFrame{
         });
 
     }
-
-    // create constructor for current user object
-    Person currentUser = new Person();
 
     private void login() {
         try {
@@ -110,8 +110,11 @@ public class Login extends JFrame{
     }
 
     private void openScreen() {
+        ImageIcon img = new ImageIcon("./img/icon.png");
+
         Screen screen = new Screen();
         screen.setVisible(true);
+        screen.setIconImage(img.getImage());
 
 
         Person tom = new Person("Tom Holland","T2602200038810C","tomholland@marvel.com", "57104790", "26/02/2000");
@@ -125,17 +128,18 @@ public class Login extends JFrame{
     }
 
     public static void main(String[] args) {
-        
+        ImageIcon img = new ImageIcon("./img/icon.png");
+
+        Login login = new Login();
+        login.setVisible(true);
+        login.setIconImage(img.getImage());
         try {
-            UIManager
-                    .setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception exc) {
             JOptionPane.showMessageDialog(null,
                     "setLookAndFeel didn`t work: \n" + exc, "UI Failure",
                     JOptionPane.INFORMATION_MESSAGE);
         }
-        
-        Login login = new Login();
-        login.setVisible(true);
+
     }
 }
