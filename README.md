@@ -17,4 +17,4 @@ New contacts can be added and existing one can be edited.
 
 ![Screenshot 2021-11-13 205313](https://user-images.githubusercontent.com/84242585/141652272-519c6622-35bf-4d7b-a268-5419f549f6db.png)
 
-![Screenshot 2021-11-13 210201](https://user-images.githubusercontent.com/84242585/141652414-484c6967-ee8b-4dfd-a73f-d45f24eec928.png)
+![JavaSwing](https://user-images.githubusercontent.com/84242585/155070411-59bd4b53-3092-40f8-944a-eb5ded4e0b15.png)
